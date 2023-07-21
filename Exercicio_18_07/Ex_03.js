@@ -2,10 +2,22 @@
 */
 
 const prompt = require("prompt-sync")();
-const entrada = prompt("Digite um número inteiro positivo: "); // entrada: 10
-
-for (var i = 0; i < entrada.length; i++) {
-    if((entrada % 2 == 0) & (entrada % 3 == 0) & (entrada % 5 == 0)) {
-        console.log("Não é um número primo")
+const entrada = Number(prompt("Digite um número inteiro positivo: ")); // entrada: 11
+verificarEntrada();
+function verificarEntrada() {
+    if (entrada == 0 || entrada == 1) {
+        console.log("Obs: O valor digitado não pode ser 0 ou 1");
+        console.log("Tente novamente...");
+        return verificarEntrada();
+    } else {
+        for (let i = 2; i < entrada; i++) {
+            if(i % 2 != 1 || i % 3 != 1 || i % 5 != 1) {
+                console.log(`O valor ${i} é primo`);
+            } else {
+                console.log(`O valor ${i} não é primo`);
+            }
+        }
+        console.log("Fím do código...")
     }
+
 }
