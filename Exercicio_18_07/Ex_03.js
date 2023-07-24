@@ -22,3 +22,5 @@ function verificarEntrada() {
     }
   console.log("Fím do código...")
 }
+
+// OK
